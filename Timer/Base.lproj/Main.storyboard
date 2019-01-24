@@ -68,17 +68,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC6-y7-ssM">
+                                <rect key="frame" x="131" y="214" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.082243317851329364" green="0.20975604784940038" blue="0.61081201424870468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wke-K8-zIW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TC6-y7-ssM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="131" id="3CR-ct-HMQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WED-pu-b6Z" secondAttribute="trailing" constant="116" id="4pp-8C-Vrx"/>
                             <constraint firstItem="WED-pu-b6Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="5V4-gp-KAG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tSS-Of-u2z" secondAttribute="trailing" constant="111" id="9TH-5l-JSq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TC6-y7-ssM" secondAttribute="trailing" constant="130" id="ClN-uw-ilN"/>
                             <constraint firstItem="jEX-Gb-Dcf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GCz-wU-9gE"/>
                             <constraint firstItem="Uhc-4U-wtX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lkq-pX-mz7"/>
                             <constraint firstItem="tSS-Of-u2z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="Ohq-Hp-D0N"/>
                             <constraint firstItem="jEX-Gb-Dcf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Whx-EI-jkw"/>
                             <constraint firstItem="jEX-Gb-Dcf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZTW-0a-idO"/>
+                            <constraint firstItem="TC6-y7-ssM" firstAttribute="top" secondItem="tSS-Of-u2z" secondAttribute="bottom" constant="29" id="bW5-y7-mty"/>
                             <constraint firstItem="Uhc-4U-wtX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fjA-pl-K9u"/>
                             <constraint firstItem="WED-pu-b6Z" firstAttribute="top" secondItem="tSS-Of-u2z" secondAttribute="bottom" constant="94" id="nVW-bz-Cdr"/>
                             <constraint firstItem="tSS-Of-u2z" firstAttribute="top" secondItem="jEX-Gb-Dcf" secondAttribute="bottom" constant="91" id="sHI-ZC-pgL"/>
@@ -93,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="-351"/>
+            <point key="canvasLocation" x="1012.5" y="-351.76056338028167"/>
         </scene>
     </scenes>
 </document>

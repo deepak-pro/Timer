@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
     var timer = Timer()
     var audioplay = AVAudioPlayer()
 
@@ -17,15 +17,20 @@ class ViewController: UIViewController {
     
     var time = 0
    
+    @IBAction func add(_ sender: Any) {
+        time = Int(input.text!)!
+        timelabel.text = String(time)
+        
+    }
     @objc func decreaseTimer() {
         
-        if time > 0 {
+        
             
             time -= 1
             
             timelabel.text = String(time)
             
-        } else {
+        if time == 0 {
             audioplay.play()
             timer.invalidate()
             
@@ -44,6 +49,13 @@ class ViewController: UIViewController {
             
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     @IBAction func minus(_ sender: Any) {
         if time > 5 {
             time -= 5
@@ -60,6 +72,7 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.decreaseTimer), userInfo: nil, repeats: true)    }
     
     @IBAction func reset(_ sender: Any) {
+        time =  Int(input.text!)!
         timelabel.text = String(time)
         timer.invalidate()
     }
