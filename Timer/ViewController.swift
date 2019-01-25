@@ -12,13 +12,14 @@ import AVFoundation
 class ViewController: UIViewController,UITextFieldDelegate {
     var timer = Timer()
     var audioplay = AVAudioPlayer()
+    var timerOn : Bool = false
 
     @IBOutlet weak var input: UITextField!
     
-    var time = 0
+    var time = 120
    
     @IBAction func add(_ sender: Any) {
-        time = Int(input.text!)!
+        time = Int(input.text!) ?? 120
         timelabel.text = String(time)
         
     }
@@ -69,16 +70,22 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func start(_ sender: Any) {
+        if(timerOn == true){
+            return
+        }
+        timerOn = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.decreaseTimer), userInfo: nil, repeats: true)    }
     
     @IBAction func reset(_ sender: Any) {
         time =  Int(input.text!)!
         timelabel.text = String(time)
         timer.invalidate()
+        timerOn = false
     }
     @IBAction func stop(_ sender: Any) {
         timer.invalidate()
         audioplay.stop()
+        timerOn = false
     }
     
     
